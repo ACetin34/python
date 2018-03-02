@@ -1,4 +1,6 @@
-f = int(input("İşlem Kaç Defa Tekrar Etsin"))
+f = int(input("İşlem Kaç Defa Tekrar Etsin : "))
+if f<=0:
+    print ("Döngü sıfırdan tekrar edemez. : ")
 for i in range (0,f) :
     a = int(input("1. Sayıyı Girin :"))
     b = int(input("2. Sayıyı Girin :"))
