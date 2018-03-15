@@ -1,14 +1,17 @@
-import random
+﻿import random
+
 arr = [None] * 100
+temparr = [None] * 99
 for i in range(1, 100):
-
     arr[i] = i
-    arr2 = i
-
 arr[0] = random.randint(1, 99)
-print(arr)
-
 random.shuffle(arr)
-
-randoms = [x for n, x in enumerate(arr) if x in arr[:n]]
-print ("Random Sayı: ", randoms)
+print(arr)
+for i in arr:
+    d = temparr[i-1]
+    if d == None:
+        temparr [i-1]=i
+    else:
+        print("Duplicate Sayi : {}".format(i))
+        break
+print(temparr)

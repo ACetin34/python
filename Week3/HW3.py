@@ -1,4 +1,4 @@
-a = input("Bir kelime giriniz : ")
+﻿a = input("Bir kelime giriniz : ")
 a=a.lower()
 arr=[]
 arr2=[]

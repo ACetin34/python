@@ -1,9 +1,16 @@
-a = []
-s = input("Bir cümle ya da kelime giriniz : ")
+﻿a = []
+s = input("Bir kelime giriniz : ")
 s = s.lower()
-a += s
-
-Sıra =[ii for n , ii in enumerate(a) if ii not in a[:n]]
-
-d= "".join(Sıra)
-print(d)
+tmp=[None]*len(s)
+i=0
+for c in s:
+    print(c)
+    varmi=False
+    for j in range(len(s)):
+        k=tmp[j]
+        if c==k:
+            varmi=True
+    if varmi == False:
+        tmp[i]=c
+        i = i+1
+print(tmp)
