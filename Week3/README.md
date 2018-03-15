@@ -12,7 +12,7 @@ Input girilir."lower" komutu ile lowercase işlemi yapılır."arr" ve "arr2" ism
 "reverse" isminde method tanımlanır."x" değişkeni "str"nin length değerine eşitlenir."arr" isminde boş bir array tanımlanır.For döngüsü "str"nin length değeri kadar tekrar eder.Input'un "ort" değeri bulunur eğer çıkan sayı virgüllü ise int ile virgülü atarız.Tekrardan bir "for" döngüsü oluştururuz ve kelimenin "ort" değerine kadar bir baştan bir sondan karakterlerin yerini değiştirmesini isteriz."join" ile arrayin içindeki karakterlerin birleşik olarak yazılmasını sağlarız."return" ile methodu tamamlarız.Input girilmesini isteriz ve bu input'u "reverse methodu" ile işleme alırız.
 
 # HW5
-app ve ext isminde iki method oluştururuz."app" methoduna "arr,arr2" adında iki adet array tanımlarız."arr" arrayi sabit "arr2" arrayi ise input değeri içine aktarır."arr2" inputu içine yazdıktan sonra "arr2" arrayi "arr" arrayine append olur.
+app ve ext isminde iki method oluştururuz."app" methoduna "arr,arr2" adında iki adet array tanımlarız."arr" arrayinin içi dolu "arr2" arrayi ise input değerini içine yazdırır."arr2" inputu içine yazdıktan sonra "arr2" arrayi "arr" arrayine append olur.
 
 ext methodu da aynı şekilde çalışır fakat "arr2" inputu içine yazdıktan sonra "arr2" arrayini "arr" arrayine expend ederiz.
 
