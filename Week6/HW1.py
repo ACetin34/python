@@ -1,3 +1,6 @@
+import random
+
+
 class Node:
     def __init__(self, data):
         self._data = data
@@ -20,7 +23,7 @@ class LinkedList:
     def __init__(self):
         self._rootNode = None
 
-    def add(self, data):
+    def insert(self, data):
         tmp = Node(data)
         if self._rootNode == None:
             self._rootNode = tmp
@@ -28,7 +31,6 @@ class LinkedList:
         v = self._rootNode
         while v.nextNode != None:
             v = v.nextNode
-
         v.nextNode = tmp
 
     def dump(self):
@@ -54,47 +56,43 @@ class LinkedList:
             v1 = v2
             v2 = v2.nextNode
 
-    def findCycle(self):
+    def find_cycle(self):
         if self._rootNode == None:
-            print("LinkedList Boştur..")
-            return
-        if self._rootNode.nextNode == None:
-            print("LinkedList Tek Elemanlıdır..")
-            return
-        if self._rootNode.nextNode == self._rootNode:
-            print("LinkedList İlk Node'dan cycledadır..")
-            print("Node'un değeri : ", self._rootNode.data)
             return
         slowptr = self._rootNode
-        fastptr = slowptr.nextNode.nextNode
-        cycle = False
+        fastptr = self._rootNode
         while fastptr != None:
-            slowptr = slowptr
-            fastptr = fastptr.nextNode
-            if fastptr == slowptr:
-                cycle = True
-                print("Cycle Vardır.")
-                print("Cycle başladığı node'un değeri : ", slowptr.data)
-                break
             slowptr = slowptr.nextNode
-            fastptr = fastptr.nextNode
-        if cycle == False:
-            print("Cycle yoktur.")
-            return
+            fastptr = slowptr.nextNode.nextNode
+            if fastptr == None:
+                print("Cycle Yoktur..")
+                return
+            if fastptr.nextNode == slowptr or fastptr != None:
+                print("Cycle Vardır..")
+                return
 
-    def doCycle(self):
+    def do_cycle(self):
         rtnode = self._rootNode
-        rtnode.nextNode.nextNode.nextNode.nextNode.nextNode=rtnode.nextNode
+        counter = 0
+        while rtnode != None:
+            prevNode = rtnode
+            rtnode = rtnode.nextNode
+            counter = counter + 1
+        rnd = random.randint(0, counter)
+        rtnode = self._rootNode
+        for i in range(0, rnd):
+            rtnode = rtnode.nextNode
+        prevNode.nextNode = rtnode
 
 
 if __name__ == "__main__":
-    a = LinkedList()
-    a.add(6)
-    a.add(7)
-    a.add(8)
-    a.add(9)
-    a.add(10)
-    print("--" * 10)
-    a.doCycle()
-    a.findCycle()
-    print("--" * 10)
+    x = LinkedList()
+    x.insert(5)
+    x.insert(10)
+    x.insert(15)
+    x.insert(20)
+    x.insert(25)
+    x.insert(30)
+    x.insert(35)
+    x.do_cycle()
+    x.find_cycle()
